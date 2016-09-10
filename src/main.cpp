@@ -13,12 +13,21 @@
 using namespace std;
 
 int main(){
-	stack<char> pila;
-	queue<char> cola;
 	string s;
 	//Input Stream al string
 	cout<<"Ingrese la frase..."<<endl; 
 	getline(cin, s); //Utilizado para evitar problemas con los espacios en cin
+	if (verificaPalindromo(s)){
+		cout<<s<<" es un palindromo!"<<endl;
+	} else {
+		cout<<s<<" no es un palindromo..."<<endl;
+	}
+	return 0;
+}
+
+boolean verificaPalindromo(string s){
+	stack<char> pila;
+	queue<char> cola;
 	s.erase(remove(s.begin(),s.end(),' '),s.end()); //Elimina todos los espacios y redimensiona la cadena
 	for(int i=0 ; i < s.length() ; i++){ //Ingresa letra a letra a la pila y cola
         	pila.push(s[i]);
@@ -26,12 +35,10 @@ int main(){
     	}
  	for(int i=0 ; i < s.length() ; i++){
         	if (pila.top() != cola.front()){ //Letra a letra revisa igualdad entre cola y pila
-        		cout<<s<<" no es un palindromo."<<endl; //Si no son iguales, finaliza el programa
-     			return 1;
+     			return false; //Si encuentra diferencia, regresa falso
 		}
  	pila.pop();
  	cola.pop();
     	}
- 	cout<<s<<" es un palindromo!"<<endl; //Si todas son iguales en la pila y cola, entonces es un palindromo
-	return 0;
+	return true; //Si termina sin encontrar diferencia regresa verdadero
 }
