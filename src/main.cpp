@@ -1,7 +1,7 @@
 /*	Nombres: Fitzer Gorbach Gabriel
-		 Ponce de León Súchil Daniel
-	Descripción: Este programa lee una frase y utilizando las estructuras de pila y cola, determina si dicha frase
-	es un palíndromo.
+		 Ponce de LeÃ³n SÃºchil Daniel
+	DescripciÃ³n: Este programa lee una frase y utilizando las estructuras de pila y cola, determina si dicha frase
+	es un palÃ­ndromo.
 	
 */
 
@@ -9,6 +9,7 @@
 #include<stack>
 #include<queue>
 #include<string>
+#include<algorithm>
 using namespace std;
 
 int main(){
@@ -18,7 +19,7 @@ int main(){
 	//Input Stream al string
 	cout<<"Ingrese la frase..."<<endl; 
 	getline(cin, s);
-	remove(s.begin(), s.end(), ' ');
+	s.erase(remove(s.begin(),s.end(),' '),s.end());
 	for(int i=0 ; i < s.length() ; i++){
         	pila.push(s[i]);
         	cola.push(s[i]);
