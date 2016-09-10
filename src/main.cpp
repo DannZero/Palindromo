@@ -9,7 +9,7 @@
 #include<stack>
 #include<queue>
 #include<string>
-#include<algorithm>
+#include<algorithm> //Necesario para la función string.erase()
 using namespace std;
 
 int main(){
@@ -19,19 +19,19 @@ int main(){
 	//Input Stream al string
 	cout<<"Ingrese la frase..."<<endl; 
 	getline(cin, s);
-	s.erase(remove(s.begin(),s.end(),' '),s.end());
-	for(int i=0 ; i < s.length() ; i++){
+	s.erase(remove(s.begin(),s.end(),' '),s.end()); //Elimina todos los espacios y redimensiona la cadena
+	for(int i=0 ; i < s.length() ; i++){ //Ingresa letra a letra a la pila y cola
         	pila.push(s[i]);
         	cola.push(s[i]);
     	}
  	for(int i=0 ; i < s.length() ; i++){
-        	if (pila.top() != cola.front()){
-        		cout<<s<<" no es un palindromo."<<endl;
+        	if (pila.top() != cola.front()){ //Letra a letra revisa igualdad entre cola y pila
+        		cout<<s<<" no es un palindromo."<<endl; //Si no son iguales, finaliza el programa
      			return 1;
 		}
  	pila.pop();
  	cola.pop();
     	}
- 	cout<<s<<" es un palindromo!"<<endl;
+ 	cout<<s<<" es un palindromo!"<<endl; //Si todas son iguales en la pila y cola, entonces es un palindromo
 	return 0;
 }
