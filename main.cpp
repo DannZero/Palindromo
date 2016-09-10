@@ -10,20 +10,23 @@
 using namespace std;
 
 int main(){
-	stack pila;
-	queue cola;
+	stack<char> pila;
+	queue<char> cola;
 	string s;
 	//Input Stream al string
-	quitarEspacios(s);
-	cin >> s;
-	
-	
-	//TO DO code here...
-}
-
-
- string quitarEspacios(string input)
-{
-  input.erase(std::remove(input.begin(),input.end(),' '),input.end());
-  return input;
+	cout<<"Ingrese la frase..."<<endl;
+	getline(cin,s); 
+     	remove(s.begin(),astring.end(),' ');
+     	for(int i=0 ; i < s.length(); i++){
+     		pila.push(s[i]);
+     		cola.push(s[i]);
+     	}
+     	for(int i=0 ; i < length() ; i++){
+     		if (pila.pop() != cola.pop()){
+     			cout<<s<<" no es un palindromo."<<endl;
+     			return 1;
+     		}
+     	}
+     	cout<<s<<" es un palindromo!"<<endl;
+     	return 0;
 }
