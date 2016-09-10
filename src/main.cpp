@@ -18,7 +18,7 @@ int main(){
 	string s;
 	//Input Stream al string
 	cout<<"Ingrese la frase..."<<endl; 
-	getline(cin, s);
+	getline(cin, s); //Utilizado para evitar problemas con los espacios en cin
 	s.erase(remove(s.begin(),s.end(),' '),s.end()); //Elimina todos los espacios y redimensiona la cadena
 	for(int i=0 ; i < s.length() ; i++){ //Ingresa letra a letra a la pila y cola
         	pila.push(s[i]);
