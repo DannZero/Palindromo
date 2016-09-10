@@ -12,20 +12,7 @@
 #include<algorithm> //Necesario para la función string.erase()
 using namespace std;
 
-int main(){
-	string s;
-	//Input Stream al string
-	cout<<"Ingrese la frase..."<<endl; 
-	getline(cin, s); //Utilizado para evitar problemas con los espacios en cin
-	if (verificaPalindromo(s)){
-		cout<<s<<" es un palindromo!"<<endl;
-	} else {
-		cout<<s<<" no es un palindromo..."<<endl;
-	}
-	return 0;
-}
-
-boolean verificaPalindromo(string s){
+bool verificaPalindromo(string s){
 	stack<char> pila;
 	queue<char> cola;
 	s.erase(remove(s.begin(),s.end(),' '),s.end()); //Elimina todos los espacios y redimensiona la cadena
@@ -41,4 +28,17 @@ boolean verificaPalindromo(string s){
  	cola.pop();
     	}
 	return true; //Si termina sin encontrar diferencia regresa verdadero
+}
+
+int main(){
+	string s;
+	//Input Stream al string
+	cout<<"Ingrese la frase..."<<endl; 
+	getline(cin, s); //Utilizado para evitar problemas con los espacios en cin
+	if (verificaPalindromo(s)){
+		cout<<s<<" es un palindromo!"<<endl;
+	} else {
+		cout<<s<<" no es un palindromo..."<<endl;
+	}
+	return 0;
 }
