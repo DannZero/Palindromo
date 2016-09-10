@@ -1,5 +1,6 @@
-/*	Blah blah
- *	blah blah blah
+/*	Nombres: Fitzer Gorbach Gabriel
+		 Ponce de León Súchil Daniel
+	
 */
 
 #include<iostream>
@@ -13,8 +14,16 @@ int main(){
 	queue cola;
 	string s;
 	//Input Stream al string
+	quitarEspacios(s);
 	cin >> s;
 	
 	
 	//TO DO code here...
+}
+
+
+ string quitarEspacios(string input)
+{
+  input.erase(std::remove(input.begin(),input.end(),' '),input.end());
+  return input;
 }
